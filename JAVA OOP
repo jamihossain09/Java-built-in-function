@@ -1,1 +1,76 @@
-JAVaA OOP HERE FROM SD-1 COURSE
+//JAVaA OOP HERE FROM SD-1 COURSE
+// Person class (Superclass)
+class Person {
+    protected String name;
+    protected int age;
+
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method to display person's details
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+// Student class (Subclass of Person)
+class Student extends Person {
+    private String studentID;
+    private String major;
+
+    // Constructor
+    public Student(String name, int age, String studentID, String major) {
+        super(name, age); // Call to the superclass constructor
+        this.studentID = studentID;
+        this.major = major;
+    }
+
+    // Overridden method to display student details
+    @Override
+    public void displayDetails() {
+        super.displayDetails(); // Call to the superclass method
+        System.out.println("Student ID: " + studentID);
+        System.out.println("Major: " + major);
+    }
+}
+
+// Teacher class (Subclass of Person)
+class Teacher extends Person {
+    private String teacherID;
+    private String subject;
+
+    // Constructor
+    public Teacher(String name, int age, String teacherID, String subject) {
+        super(name, age); // Call to the superclass constructor
+        this.teacherID = teacherID;
+        this.subject = subject;
+    }
+
+    // Overridden method to display teacher details
+    @Override
+    public void displayDetails() {
+        super.displayDetails(); // Call to the superclass method
+        System.out.println("Teacher ID: " + teacherID);
+        System.out.println("Subject: " + subject);
+    }
+}
+
+// Main class to run the program
+public class SchoolSystem {
+    public static void main(String[] args) {
+        // Create a Student object
+        Student student = new Student("Alice Johnson", 20, "S12345", "Computer Science");
+        System.out.println("Student Details:");
+        student.displayDetails();
+        System.out.println();
+
+        // Create a Teacher object
+        Teacher teacher = new Teacher("Mr. Smith", 35, "T98765", "Mathematics");
+        System.out.println("Teacher Details:");
+        teacher.displayDetails();
+    }
+}
